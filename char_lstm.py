@@ -107,4 +107,5 @@ model.fit(x, y,
           epochs=60,
           callbacks=[print_callback])
 
-model.save('first.hd5')
+#uncomment out when you want to save the model, make sure to include model name
+#model.save('first.hd5')
