@@ -46,7 +46,8 @@ def generate_rap(sentence, diversity=0.3, length=400):
         extra = ' ' * diff
         sentence = extra + sentence
 
-    generated = sentence + ' '
+    generated = ''
+    print('----- Generating with seed: "' + sentence + '"')
     for i in range(length):
         x_pred = np.zeros((1, maxlen, len(chars)))
         for t, char in enumerate(sentence):
