@@ -51,7 +51,7 @@ for i, sentence in enumerate(sentences):
 # build the model: a single LSTM
 print('Build model...')
 model = Sequential()
-model.add(LSTM(128, input_shape=(maxlen, len(chars))))
+model.add(LSTM(256, input_shape=(maxlen, len(chars))))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
 
@@ -102,10 +102,9 @@ def on_epoch_end(epoch, logs):
 
 print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
 
-model.fit(x, y,
-          batch_size=256,
-          epochs=60,
+model.fit(x, y, batch_size=256,
+          epochs=10,
           callbacks=[print_callback])
 
 #uncomment out when you want to save the model, make sure to include model name
-#model.save('first.hd5')
+model.save('second_model.hd5')
