@@ -51,7 +51,7 @@ for i, sentence in enumerate(sentences):
 # build the model: a single LSTM
 print('Build model...')
 model = Sequential()
-model.add(LSTM(256, input_shape=(maxlen, len(chars))))
+model.add(LSTM(256, dropout_W=0.5, input_shape=(maxlen, len(chars))))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
 
