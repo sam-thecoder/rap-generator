@@ -109,8 +109,7 @@ print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
 
 model.fit(x, y, batch_size=256,
           epochs=10,
-          callbacks=[monitor, checkpointer],
-          callbacks=[print_callback])
+          callbacks=[print_callback, monitor, checkpointer])
 
 #uncomment out when you want to save the model, make sure to include model name
 model.save('dropout_model.hd5') 
