@@ -14,6 +14,8 @@ from keras.layers import Dense, Activation
 from keras.layers import LSTM
 from keras.optimizers import RMSprop
 from keras.utils.data_utils import get_file
+from keras.callbacks import EarlyStopping
+from keras.callbacks import ModelCheckpoint
 import numpy as np
 import random
 import sys
@@ -54,6 +56,9 @@ model = Sequential()
 model.add(LSTM(256, dropout_W=0.5, input_shape=(maxlen, len(chars))))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
+
+monitor = EarlyStopping(monitor='val_loss', min_delta=1e-3, patience=5, verbose=0, mode='auto')
+checkpointer = ModelCheckpoint(filepath="best_weights.hdf5", verbose=0, save_best_only=True) # save best model
 
 optimizer = RMSprop(lr=0.01)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
@@ -104,6 +109,7 @@ print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
 
 model.fit(x, y, batch_size=256,
           epochs=10,
+          callbacks=[monitor, checkpointer],
           callbacks=[print_callback])
 
 #uncomment out when you want to save the model, make sure to include model name

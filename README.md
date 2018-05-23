@@ -7,9 +7,9 @@ Generated the text character by character.
 To run it use
 
 ```
-python generate.py "start text" diversity (int) total_len_chars (int)
+python generator.py "start text" diversity (int) total_len_chars (int)
 
-python generate.py "thinking out loud" 0.3 400
+python generator.py "thinking out loud" 0.3 400
 ```
 
 example generated output
