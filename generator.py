@@ -15,7 +15,7 @@ try:
 except Exception as e:
     length = 400
 
-model = load_model('first_sequence.hd5')
+model = load_model('dropout_model.hd5')
 
 #some dependencies
 path = 'lyrics.txt'
