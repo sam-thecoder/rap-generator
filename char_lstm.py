@@ -30,7 +30,7 @@ char_indices = dict((c, i) for i, c in enumerate(chars))
 indices_char = dict((i, c) for i, c in enumerate(chars))
 
 # cut the text in semi-redundant sequences of maxlen characters
-maxlen = 50
+maxlen = 240
 step = 3
 sentences = []
 next_chars = []
@@ -107,4 +107,4 @@ model.fit(x, y, batch_size=256,
           callbacks=[print_callback])
 
 #uncomment out when you want to save the model, make sure to include model name
-model.save('dropout_model.hd5') 
+model.save('dropout_model_large.hd5') 
