@@ -2,7 +2,7 @@ from keras.models import load_model
 import sys
 import io
 import numpy as np
-maxlen = 50
+maxlen = 240
 
 start_text = sys.argv[1]
 try:
