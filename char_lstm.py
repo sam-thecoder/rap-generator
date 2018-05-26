@@ -52,7 +52,9 @@ for i, sentence in enumerate(sentences):
 # build the model: a single LSTM
 print('Build model...')
 model = Sequential()
-model.add(LSTM(256, dropout_W=0.5, input_shape=(maxlen, len(chars))))
+model.add(LSTM(128, dropout_W=0.5, input_shape=(maxlen, len(chars))))
+model.add(LSTM(128, dropout_W=0.5, return_sequences=True))
+model.add(LSTM(128, dropout_W=0.5))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
 
@@ -108,4 +110,4 @@ model.fit(x, y, batch_size=256,
           callbacks=[print_callback])
 
 #uncomment out when you want to save the model, make sure to include model name
-model.save('dropout_model_large.hd5') 
+model.save('dropout_model_layered.hd5') 
