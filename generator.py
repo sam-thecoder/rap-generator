@@ -2,7 +2,7 @@ from keras.models import load_model
 import sys
 import io
 import numpy as np
-maxlen = 240
+maxlen = 140
 
 start_text = sys.argv[1]
 try:
@@ -15,7 +15,7 @@ try:
 except Exception as e:
     length = 400
 
-model = load_model('dropout_model.hd5')
+model = load_model('dropout_model_large.hd5')
 
 #some dependencies
 path = 'lyrics.txt'
