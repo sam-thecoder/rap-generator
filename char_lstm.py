@@ -53,7 +53,7 @@ for i, sentence in enumerate(sentences):
 print('Build model...')
 model = Sequential()
 model.add(LSTM(128, dropout_W=0.5, input_shape=(maxlen, len(chars))))
-model.add(LSTM(128, dropout_W=0.5, return_sequences=True))
+model.add(LSTM(128, dropout_W=0.5))
 model.add(LSTM(128, dropout_W=0.5))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
