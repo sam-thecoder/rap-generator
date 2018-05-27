@@ -110,4 +110,4 @@ model.fit(x, y, batch_size=256,
           callbacks=[print_callback])
 
 #uncomment out when you want to save the model, make sure to include model name
-model.save('dropout_model_layered.hd5') 
+model.save('dropout_cnn_model.hd5') 
