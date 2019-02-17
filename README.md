@@ -1,4 +1,7 @@
 # rap-generator
+
+Repo moved to [BitBucket](https://bitbucket.org/muiruri_samuel/rap-generator)
+
 Machine Learning Example Code on Learning to Rap
 
 First model of a LSTM trained on some rap text corpus to generate rap like text. 
